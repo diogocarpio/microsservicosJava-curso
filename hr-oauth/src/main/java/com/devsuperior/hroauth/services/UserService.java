@@ -12,7 +12,7 @@ import com.devsuperior.hroauth.entities.User;
 import com.devsuperior.hroauth.feignclients.UserFeignClient;
 
 @Service
-public class UserService implements UserDetailsService{
+public class UserService implements UserDetailsService {
 	
 	private static Logger logger = LoggerFactory.getLogger(UserService.class);
 	
