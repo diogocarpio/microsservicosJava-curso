@@ -14,14 +14,14 @@ public class AppConfig {
 	private String jwtSecret;
 	
 	@Bean
-	public  BCryptPasswordEncoder bCryptPasswordEncoder() {
-		return new BCryptPasswordEncoder(); 
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
-	
+
 	@Bean
 	public JwtAccessTokenConverter accessTokenConverter() {
 		JwtAccessTokenConverter tokenConverter = new JwtAccessTokenConverter();
-		tokenConverter.setSigningKey("MY-SECRET-KEY");
+		tokenConverter.setSigningKey(jwtSecret);
 		return tokenConverter;
 	}
 	
@@ -29,6 +29,4 @@ public class AppConfig {
 	public JwtTokenStore tokenStore() {
 		return new JwtTokenStore(accessTokenConverter());
 	}
-	
-	
 }
